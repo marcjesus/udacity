@@ -1,13 +1,14 @@
 import cv2
 
 # Read the image
-image = cv2.imread('images/faces.jpeg')
+image = cv2.imread('images/motorway.jpeg')
 
 # Convert the image to grayscale
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 # Detect faces in the image
-face_classifier = cv2.CascadeClassifier('models/haarcascade_frontalface_default.xml')
+# face_classifier = cv2.CascadeClassifier('models/haarcascade_frontalface_default.xml')
+face_classifier = cv2.CascadeClassifier('models/haarcascade_car.xml')
 
 # Detect faces using the grayscale image
 faces = face_classifier.detectMultiScale(gray, 1.0485258, 6)
