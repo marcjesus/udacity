@@ -26,5 +26,12 @@ Applying model-driven and data-driven approaches to predict how oterh vehicles o
 How to activate the throttle and the steering wheel of the car to move it following a trajectory described by coordinates. We will cover the most basic but also the most common controller: the Proportional Integral Derivative or PID controller. 
 
 
+## Notes
+
+This scripts work under virtual enviorment .env with the following packages:
+
+1. pip install pillow == 9.5.0
+2. pip install opencv-python
+
 
 
