@@ -1,12 +1,18 @@
+import ssl
 import os
 import torch
-from torchvision import transforms
-from torchvision.models.detection import fasterrcnn_resnet50_fpn
-from PIL import Image
+import torchvision
+from torchvision import transforms  # Import transforms module from torchvision
+from PIL import Image, ImageDraw
 import imageio
+import urllib.request
 
-# Load pre-trained model
-model = fasterrcnn_resnet50_fpn(pretrained=True)
+# Disable SSL certificate verification
+ssl._create_default_https_context = ssl._create_unverified_context
+
+# Download pre-trained model from torchvision
+model = torchvision.models.detection.fasterrcnn_resnet50_fpn(pretrained=True)
+
 model.eval()
 
 # Define transformations
@@ -31,7 +37,7 @@ def object_detection(images_folder):
             if element.item() == 3:  # Assuming car class label is 3
                 index = prediction[0]['labels'].tolist().index(element.item())
                 box = prediction[0]['boxes'][index].cpu().numpy().astype(int)
-                img = draw_rectangle(img, box)
+                img = draw_rectangle(img, box, color="blue")
 
         images.append(img)
 
