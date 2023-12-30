@@ -1,25 +1,23 @@
-import os 
-import imageio
-from PIL import Image
+import cv2
 
-def resize_images(images_folder, size=(200, 200)):
-    image_files = [os.path.join(images_folder, file) for file in os.listdir(images_folder) if file.endswith(('png', 'jpg', 'jpeg'))]
+# Read the input image
+input_image_path = 'marc.jpg'  # Replace with your image path
+output_image_path = 'output_drawing.jpg'
 
-    resized_images = []
-    for file_name in sorted(image_files):
-        img = Image.open(file_name)
-        img_resized = img.resize(size, Image.ANTIALIAS)  # Resize to specified size
-        resized_images.append(img_resized)
+# Read the input image using OpenCV
+input_image = cv2.imread(input_image_path)
 
-    return resized_images
+# Convert the image to grayscale
+gray_image = cv2.cvtColor(input_image, cv2.COLOR_BGR2GRAY)
 
-def create_gif(images_folder, gif_path):
-    resized_images = resize_images(images_folder)
-    imageio.mimsave(gif_path, resized_images, duration=0.2)  # Adjust duration between frames as needed
+# Apply GaussianBlur to reduce noise and improve edge detection
+blurred_image = cv2.GaussianBlur(gray_image, (5, 5), 0)
 
+# Apply Canny edge detection
+edges = cv2.Canny(blurred_image, threshold1=30, threshold2=100)  # Adjust thresholds as needed
 
-if __name__ == "__main__":
-    images_folder_path = 'test_video'  # Replace this with your image folder path
-    output_gif_path = 'output.gif'
+# Invert the edges to create a sketch-like effect
+inverted_edges = 255 - edges
 
-    create_gif(images_folder_path, output_gif_path)
+# Save the output image
+cv2.imwrite(output_image_path, inverted_edges)

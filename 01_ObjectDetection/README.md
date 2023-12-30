@@ -8,6 +8,17 @@ You need to create a virtual environment in CONDA and use next libraries. <br>
 
 
 # COMPUTER VISION
+<div style="display: flex;">
+    <div style="flex: 50%; padding: 5px;">
+        <img src="https://github.com/marcjesus/udacity/blob/main/01_ObjectDetection/output.gif" alt="Image 1" width="400" />
+    </div>
+    <div style="flex: 50%; padding: 5px;">
+        <img src="https://github.com/marcjesus/udacity/blob/main/01_ObjectDetection/OPENCV_output_gif.gif" alt="Image 2" width="400" />
+    </div>
+</div>
+
+
+
 Original video<br>
 ![](https://github.com/marcjesus/udacity/blob/main/01_ObjectDetection/output.gif)
 
