@@ -40,7 +40,7 @@ role = sagemaker.get_execution_role()
 
 
 # TODO: Update the model artifact here. 
-model_artifact = ''
+model_artifact = 's3://sagemaker-us-east-1-073338978050/tf2-object-detection-2022-10-22-21-26-37-033/output/model.tar.gz'
 
 
 # Now we can deploy the model. Run the following cell and check that the model was correctly deployed by navigating to Inference endpoints in the web UI.

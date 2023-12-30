@@ -1,3 +1,8 @@
+# PROJECTS GUIDELINES
+
+In this repository you can find the main projects link to udacity self-driving car nano degrees. Repository is divided in the following projects. To run the project files it's required to create an .env in your machine. 
+
+
 # UDACITY Project
 
 In this project I will explain how I completed all the different projects for the SELF DRVING CAR ENGINEERING nanodegree. 
@@ -24,6 +29,15 @@ Applying model-driven and data-driven approaches to predict how oterh vehicles o
 
 ## CONTROL
 How to activate the throttle and the steering wheel of the car to move it following a trajectory described by coordinates. We will cover the most basic but also the most common controller: the Proportional Integral Derivative or PID controller. 
+
+
+# CREATE ENVIRONMENT
+
+1 - Create a virtual environment: Open terminal and run using conda: ‘ conda create --name myenv python=3.x ‘ You can replace ‘ myenv ‘ with your chosen name and python version you prefer. 
+
+2 - Activate the environment in terminal for windows using  ‘ myenv\Scripts\activate ‘ and for macOS and Linus use source activate myenv. For that, you need to be in the right folder. 
+
+3 - Run next folder to ensure environment is working: 01_ObjectDetection -> OPENCV_ImageObjectDetection.py which will run OPENCV from conda enviroment. You should see next results: 
 
 
 ## Notes
