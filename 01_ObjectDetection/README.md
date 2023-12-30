@@ -17,6 +17,12 @@ You need to create a virtual environment in CONDA and use next libraries. <br>
     </div>
 </div>
 
+<table>
+  <tr>
+    <td align="center"><<img src="https://github.com/marcjesus/udacity/blob/main/01_ObjectDetection/output.gif" alt="Image 1" width="400" /></td>
+    <td align="center"><img src="https://github.com/marcjesus/udacity/blob/main/01_ObjectDetection/OPENCV_output_gif.gif" alt="Image 2" width="400" /></td>
+  </tr>
+</table>
 
 
 Original video<br>
