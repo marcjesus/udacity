@@ -37,7 +37,7 @@ def object_detection(images_folder):
             if element.item() == 3:  # Assuming car class label is 3
                 index = prediction[0]['labels'].tolist().index(element.item())
                 box = prediction[0]['boxes'][index].cpu().numpy().astype(int)
-                img = draw_rectangle(img, box, color="blue")
+                img = draw_rectangle(img, box)
 
         images.append(img)
 
@@ -47,7 +47,7 @@ def object_detection(images_folder):
 def draw_rectangle(img, box):
     img_draw = img.copy()
     draw = ImageDraw.Draw(img_draw)
-    draw.rectangle([(box[0], box[1]), (box[2], box[3])], outline ="red", width=3)
+    draw.rectangle([(box[0], box[1]), (box[2], box[3])], outline="red", width=3)
     return img_draw
 
 # Function to create GIF
@@ -56,7 +56,7 @@ def create_gif(images, output_gif):
 
 if __name__ == "__main__":
     images_folder_path = 'test_video'  # Replace this with your image folder path
-    output_gif_path = 'PYTORCH_output.gif'
+    output_gif_path = 'PYTORCH_output2.gif'
 
     detected_images = object_detection(images_folder_path)
     create_gif(detected_images, output_gif_path)

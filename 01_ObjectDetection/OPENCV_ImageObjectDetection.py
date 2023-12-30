@@ -33,4 +33,4 @@ for image in sorted(image_files):
     img_resized = cv2.resize(img, (200, 200), interpolation=cv2.INTER_AREA)
     images.append(img_resized)
 
-imageio.mimsave('OPENCV_output_gif.gif', images, duration=0.5)  # Adjust duration between frames as needed
+imageio.mimsave('OPENCV_output_gif2.gif', images, duration=0.25)  # Adjust duration between frames as needed
